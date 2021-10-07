@@ -10,6 +10,9 @@ const Pet = require("./resources/pets/model");
 
 /* IMPORT ROUTERS */
 
+const booksRouter = require("./resources/books/router");
+// const petsRouter = require("./resources/pets/router");
+
 const app = express();
 
 /* SETUP MIDDLEWARE */
@@ -18,6 +21,9 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 
 /* SETUP ROUTES */
+
+app.use("/books", booksRouter);
+// app.use("/pets", petsRouter);
 
 /* CATCH-ALL TO TEST ROUTES */
 
